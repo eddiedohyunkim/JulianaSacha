@@ -170,9 +170,6 @@ nav > a{
 		width:100%;
 	}
 }
-.two-third-w-mobile{
-	width:66%;
-}
 
 
 
@@ -278,6 +275,7 @@ input[type="radio"]:checked{
 	font-size: var(--f-sz1);
 	font-family: Century-Schoolbook-Monospace-BT;
 	color:#381627;
+	font-weight: normal;
 }
 
 #submit-button:hover{
@@ -390,6 +388,7 @@ body.locked #password-overlay{
 	font-size: var(--f-sz1);
 	font-family: Century-Schoolbook-Monospace-BT;
 	color:#381627;
+	font-weight: normal;
 }
 
 #password-overlay #password-message.show{
