@@ -37,7 +37,7 @@ html{
 body{
 	height:100%;
 	overflow: hidden;
-	font-family: Century-Schoolbook-Monospace-BT;
+	font-family: GaramondPremrPro;
 	font-size: var(--f-sz1);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.15;
@@ -137,6 +137,9 @@ section.hide{
 }
 
 
+.t-center{
+	text-align: center;
+}
 
 
 /* NAV */
@@ -148,7 +151,7 @@ nav{
 }
 nav > a{
 	border-bottom: 1.5px dashed;
-	padding:0.2em 0 0.2em 0;
+	padding:0.2em 0 0em 0;
 	cursor: pointer;
 }
 
@@ -205,7 +208,7 @@ a.und:hover{
 
 details{
 	border-bottom: 1.5px dashed;
-	padding:0.2em 0 0.2em 0;
+	padding:0.2em 0 0em 0;
 }
 details > summary {
   list-style: none;
@@ -231,7 +234,7 @@ form{
 
 .form-field{
 	border-bottom: 1.5px dashed;
-	padding:0.2em 0 0.2em 0;
+	padding:0.2em 0 0em 0;
 }
 
 input {
@@ -252,7 +255,7 @@ input:-webkit-autofill:active{
 
 input::placeholder {
 	font-size: var(--f-sz1);
-	font-family: Century-Schoolbook-Monospace-BT;
+	font-family: GaramondPremrPro;
 	color:inherit;
 }
 
@@ -260,7 +263,7 @@ input[type="radio"]{
 	background-color: #38162722;
 	width:0.8em;
 	height:0.8em;
-	margin-top: 0.2em;
+	margin-top: 0.1em;
 }
 
 input[type="radio"]:checked{
@@ -273,7 +276,7 @@ input[type="radio"]:checked{
 	background-color: #38162722;
 	width:fit-content;
 	font-size: var(--f-sz1);
-	font-family: Century-Schoolbook-Monospace-BT;
+	font-family: GaramondPremrPro;
 	color:#381627;
 	font-weight: normal;
 }
@@ -386,7 +389,7 @@ body.locked #password-overlay{
 	background-color: #38162722;
 	width:fit-content;
 	font-size: var(--f-sz1);
-	font-family: Century-Schoolbook-Monospace-BT;
+	font-family: GaramondPremrPro;
 	color:#381627;
 	font-weight: normal;
 }
