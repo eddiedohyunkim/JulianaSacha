@@ -80,7 +80,7 @@ section.center-line:before{
 	height:calc(100vh - 120px);
 	position: absolute;
 	left:0px;
-	border-left:1.5px dashed;
+	border-left:1px dashed;
 }
 
 
@@ -150,7 +150,7 @@ nav{
 	
 }
 nav > a{
-	border-bottom: 1.5px dashed;
+	border-bottom: 1px dashed;
 	padding:0.2em 0 0em 0;
 	cursor: pointer;
 }
@@ -194,7 +194,7 @@ a{
 
 a.und{
 	text-decoration: underline;
-	text-decoration-thickness: 1.5px;
+	text-decoration-thickness: 1px;
 	text-underline-offset: 0.15em;
 	text-decoration-style: dashed;
 }
@@ -207,7 +207,7 @@ a.und:hover{
 }
 
 details{
-	border-bottom: 1.5px dashed;
+	border-bottom: 1px dashed;
 	padding:0.2em 0 0em 0;
 }
 details > summary {
@@ -233,7 +233,7 @@ form{
 }
 
 .form-field{
-	border-bottom: 1.5px dashed;
+	border-bottom: 1px dashed;
 	padding:0.2em 0 0em 0;
 }
 
