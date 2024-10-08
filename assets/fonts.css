@@ -11,3 +11,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face{
+    font-family: 'GaramondPremrPro-It';
+    src:url('./font/GaramondPremrPro-It.otf');
+    font-weight: normal;
+/*    font-style: normal;*/
+}
