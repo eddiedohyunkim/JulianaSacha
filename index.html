@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/fonts.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
+	<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
 </head>
 <body class="locked">
 <!-- <body> -->
@@ -15,7 +16,7 @@
 	<section class="left">
 		<div class="content">
 			<div>
-				<a href="./">
+				<a href="#Home" class="act" data-content="Home">
 					<img class="multiply" src="assets/images/Logo.svg" id="toHome">
 				</a>
 			</div>
@@ -36,7 +37,7 @@
 	</section>
 
 	<!-- HOME -->
-	<section class="right tan-bg center-line">
+	<section class="right tan-bg center-line" id="Home">
 		<div class="content">
 			<div>
 				<img class="multiply" src="assets/images/Hero.png">
@@ -70,7 +71,7 @@
 				<div>
 					<span class="header allCap">Reception</span>
 					<div class="indent">
-						March 7th 6 o'clock<br>
+						March 7th 6PM<br>
 						<a href="https://www.brennansneworleans.com/" target="_blank" class="und">Brennan’s</a><br>
 						417 Royal St, New Orleans, LA 70130
 					</div>
@@ -96,7 +97,7 @@
 				</p>
 				<p>
 					<a href="https://ash.world/hotels/peter-and-paul/" target="_blank" class="und">Hotel Peter and Paul</a><br>
-					12317 Burgund allCapy St<br>
+					12317 Burgundy St<br>
 					(504) 356-5200<br>
 				</p>
 				<p>
@@ -123,6 +124,33 @@
 					<a href="https://www.thecelestinenola.com/" target="_blank" class="und">The Celestine</a><br>
 					727 Toulouse St<br>
 					(504) 332-2200<br>
+				</p>
+				<p>
+					<a href="https://www.hotelfontenot.com/" target="_blank" class="und">Kimpton Hotel Fontenot</a><br>
+					501 Tchoupitoulas St<br>
+					(504) 571-1818<br>
+				</p>
+				<p>
+					<a href="https://www.fourseasons.com/neworleans/" target="_blank" class="und">The Four Seasons Hotel New Orleans</a><br>
+					2 Canal St<br>
+					(504) 434-5100<br>
+				</p>
+				<p>
+					<a href="https://www.ritzcarlton.com/en/hotels/new-orleans" target="_blank" class="und">The Ritz-Carlton New Orleans</a><br>
+					921 Canal St<br>
+					(504) 524-1331<br>
+				</p>
+				<p>
+					*Airbnb is an excellent option for finding accommodations in New Orleans, and we highly recommend staying in our favorite area, the Garden District. This charming neighborhood is peaceful and upscale, known for its historic mansions, oak-lined streets, and proximity to Magazine Street, which is full of boutique shops and great restaurants.
+				</p>
+				<p>
+					For a more vibrant experience, the iconic French Quarter is a must-see. While its stunning architecture and rich history make it a popular destination, please note that it can be noisy and bustling, especially at night, as it's a hub for tourists.
+				</p>
+				<p>
+					If you're looking for a more modern vibe, consider Mid-City. This area, known for its business district feel with high-rises, also boasts a fantastic selection of restaurants and cafes.
+				</p>
+				<p>
+					Feel free to share airbnb options you are considering and we can let you know if it is in a great area! 
 				</p>
 			</div>
 		</div>
@@ -379,15 +407,6 @@
   						</p>
 					</div>
 				</details>
-				<details>
-  					<summary>GIFTS</summary>
-  					<div class="para-group">
-  						<p>
-  							Your presence is already the gift but if you insist <3<br>
-  							<a href="https://www.zola.com/wedding/juianaandsacha/registry" target="_blank" class="und">Honeymoon Fund & Registry</a>
-  						</p>
-					</div>
-				</details>
 			</div>
 			<div>
 				<img class="multiply" src="assets/images/3.png">
@@ -430,6 +449,11 @@
   					<summary>Where should I stay?</summary>
   					<p>We have a list of hotels that we love on the website and Airbnb is a great option.</p>
 				</details>
+				<details>
+  					<summary>Do you have a Registry?</summary>
+  					<p>Your presence is already the gift but if you insist <3<br>
+  					<a href="https://www.zola.com/wedding/juianaandsacha/registry" target="_blank" class="und">Honeymoon Fund & Registry</a></p>
+				</details>
 			</div>
 			
 		</div>
@@ -447,6 +471,7 @@
 				</p>
 				<p id="errorMsg" class="hide">
 				</p>
+				<p id="loadingMsg" class="hide">Please wait while we process your RSVP<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
 				<form 
 				  method="POST" 
 				  action="https://script.google.com/macros/s/AKfycbw5VQuH4rexmbpVbraH7MobixMtRKw4CtqXbNL9kZLv08-eDKiKea3xSNobjwwXD_h7/exec"
@@ -493,7 +518,7 @@
 				 			<input name="Dietary_Restrictions" type="text" placeholder="Dietary Restrictions">
 				 		</div>
 				 		<div class="form-field">
-				 			<input name="Whats_App_No" type="number" placeholder="WhatsApp Number">
+				 			<input name="Whats_App_No" type="number" placeholder="WhatsApp Number" required>
 				 		</div>
 				  	</div>
 				  	<button id="submit-button" type="submit">Submit</button>
@@ -575,10 +600,19 @@
 </script>
 
 <script>
+	let submitButton = document.getElementById('submit-button');
+	let form = document.querySelector('form');
+	let loadingMsg = document.querySelector('#loadingMsg');
+
+	submitButton.addEventListener('click', function(){
+		form.classList.add('hide');
+		loadingMsg.classList.remove('hide');
+	})
+
 	function handleSubmit(event) {
       event.preventDefault(); // Prevent the default form submission
 
-      var form = document.querySelector('form');
+      // var form = document.querySelector('form');
       var successMsg = document.querySelector('#successMsg');
       var errorMsg = document.querySelector('#errorMsg');
 
@@ -591,17 +625,17 @@
       .then(response => response.json())
       .then(data => {
         if (data.result === 'success') {
-          form.classList.add('hide');
+          loadingMsg.classList.add('hide');
           successMsg.classList.remove('hide');
 
         } else {
-          form.classList.add('hide');
+          loadingMsg.classList.add('hide');
           errorMsg.innerHTML = error.message;
           errorMsg.classList.remove('hide');
         }
       })
       .catch(error => {
-        form.classList.add('hide');
+        loadingMsg.classList.add('hide');
         errorMsg.innerHTML = error.message;
         errorMsg.classList.remove('hide');
       });
