@@ -483,17 +483,17 @@
 							Kindly RSVP by February 1st, 2025
 						</div>
 				 		<div class="form-field">
-				 			<input name="Name" type="text" placeholder="Name on your invitation*" required>
+				 			<input name="Name" type="text" placeholder="Name on your invitation*">
 				 		</div>
 				 		<div class="form-field">
 				 			<p>Will you be attending the welcome cocktail on Thursday, March 6th?*</p>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="Yes" required>
+				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="Yes">
 				 				<span class="checkmark"></span>
 				 				<label for="yes">Yes</label>
 				 			</div>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="No" required>
+				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="No">
 				 				<span class="checkmark"></span>
 				 				<label for="no">No</label>
 				 			</div>
@@ -501,18 +501,18 @@
 				 		<div class="form-field">
 				 			<p>Will you be attending the ceremony and reception on Friday, March 7th?*</p>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Ceremony_Reception" value="Yes" required>
+				 				<input type="radio" name="Ceremony_Reception" value="Yes">
 				 				<span class="checkmark"></span>
 				 				<label for="yes">Yes</label>
 				 			</div>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Ceremony_Reception" value="No" required>
+				 				<input type="radio" name="Ceremony_Reception" value="No">
 				 				<span class="checkmark"></span>
 				 				<label for="no">No</label>
 				 			</div>
 				 		</div>
 				 		<div class="form-field">
-				 			<input name="Home_Address" type="text" placeholder="Home Address*" required>
+				 			<input name="Home_Address" type="text" placeholder="Home Address*">
 				 		</div>
 				 		<div class="form-field">
 				 			<input name="Dietary_Restrictions" type="text" placeholder="Dietary Restrictions">
@@ -606,9 +606,11 @@
 	let loadingMsg = document.querySelector('#loadingMsg');
 
 	submitButton.addEventListener('click', function(){
+
 		form.classList.add('hide');
 		loadingMsg.classList.remove('hide');
 	})
+
 
 	function handleSubmit(event) {
       event.preventDefault(); // Prevent the default form submission
