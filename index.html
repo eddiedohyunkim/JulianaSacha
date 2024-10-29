@@ -491,17 +491,17 @@
 							Kindly RSVP by February 1st, 2025
 						</div>
 				 		<div class="form-field">
-				 			<input name="Name" type="text" placeholder="Name on your invitation*" required>
+				 			<input name="Name" type="text" placeholder="Name on your invitation*" class="required">
 				 		</div>
 				 		<div class="form-field">
 				 			<p>Will you be attending the welcome cocktail on Thursday, March 6th?*</p>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="Yes">
+				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="Yes" class="required">
 				 				<span class="checkmark"></span>
 				 				<label for="yes">Yes</label>
 				 			</div>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="No">
+				 				<input type="radio" name="Welcome_Cocktail_&_Dinner" value="No" class="required">
 				 				<span class="checkmark"></span>
 				 				<label for="no">No</label>
 				 			</div>
@@ -509,18 +509,18 @@
 				 		<div class="form-field">
 				 			<p>Will you be attending the ceremony and reception on Friday, March 7th?*</p>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Ceremony_Reception" value="Yes">
+				 				<input type="radio" name="Ceremony_Reception" value="Yes" class="required">
 				 				<span class="checkmark"></span>
 				 				<label for="yes">Yes</label>
 				 			</div>
 				 			<div class="flex-row radio-group">
-				 				<input type="radio" name="Ceremony_Reception" value="No">
+				 				<input type="radio" name="Ceremony_Reception" value="No" class="required">
 				 				<span class="checkmark"></span>
 				 				<label for="no">No</label>
 				 			</div>
 				 		</div>
 				 		<div class="form-field">
-				 			<input name="Home_Address" type="text" placeholder="Home Address*">
+				 			<input name="Home_Address" type="text" placeholder="Home Address*" class="required">
 				 		</div>
 				 		<div class="form-field">
 				 			<input name="Dietary_Restrictions" type="text" placeholder="Dietary Restrictions">
@@ -529,7 +529,7 @@
 				 			<input name="Whats_App_No" type="text" placeholder="WhatsApp Number">
 				 		</div>
 				  	</div>
-				  	<button id="submit-button" type="submit">Submit</button>
+				  	<button id="submit-button" style="display:none" type="submit">Submit</button>
 				</form>
 			</div>
 			<div>
@@ -589,8 +589,6 @@
 		};
 	})
 </script>
-
-
 <script>
 	let navLinks = document.querySelectorAll('.act');
 	let allSections = document.querySelectorAll('section.right')
@@ -604,17 +602,42 @@
 			sectionTo.classList.remove('hide')
 		})
 	})
-
-
 </script>
 
 <script>
 	let submitButton = document.getElementById('submit-button');
 	let form = document.querySelector('form');
 	let loadingMsg = document.querySelector('#loadingMsg');
+	let required = form.querySelectorAll('.required');
+
+
+
+	const inputLists = document.querySelectorAll("input.required");
+	let showButton = true;
+	document.querySelectorAll("input.required").forEach((el) => {
+	
+	  el.addEventListener('input', (evt => {
+	
+	    inputLists.forEach((ip) => {
+	      console.log(ip.value);
+	      if (ip.value === '') {
+	        showButton = false;
+	      } else {
+	        showButton = true;
+	      }
+	    })
+	    if (showButton) {
+	      submitButton.style.display = 'block'
+	    } else {
+	      submitButton.style.display = 'none'
+	    }
+	  }))
+	})
+
+
+
 
 	submitButton.addEventListener('click', function(){
-
 		form.classList.add('hide');
 		loadingMsg.classList.remove('hide');
 	})
